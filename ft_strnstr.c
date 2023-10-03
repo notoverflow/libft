@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 13:36:40 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 13:36:40 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/03 17:05:30 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/03 17:05:30 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *src, void *dest, size_t n)
+char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
-	char	*src2;
-	char	*dest2;
+	char	*ptr;
+	char	*tf;
 	size_t	i;
 
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	i = 0;
-	if (dest > src)
+	i = len;
+	while (i > 0)
 	{
-		while (n > 0)
+		tf = to_find;
+		if (!*to_find)
+			return (str);
+		while (1 == 1)
 		{
-			dest2[n] = src2[n];
-			n--;
+			if (*str == '\0')
+				return ((void *) 0);
+			ptr = str;
+			to_find = tf;
+			while (*ptr == *to_find && *to_find != 0)
+			{
+				ptr++;
+				to_find++;
+			}
+			if (*to_find == '\0')
+				return (str);
+			str++;
 		}
+		i--;
 	}
 }

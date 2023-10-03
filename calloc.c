@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 13:36:40 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 13:36:40 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/03 17:01:59 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/03 17:01:59 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *src, void *dest, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*src2;
-	char	*dest2;
-	size_t	i;
+	void	*ptr;
 
-	src2 = (char *) src;
-	dest2 = (char *) dest;
-	i = 0;
-	if (dest > src)
-	{
-		while (n > 0)
-		{
-			dest2[n] = src2[n];
-			n--;
-		}
-	}
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
