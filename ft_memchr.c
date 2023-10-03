@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 13:36:40 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 13:36:40 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/03 16:36:54 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/03 16:39:04 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcpy(void *src, void *dest, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	char	*src2;
-	char	*dest2;
+	char	*str;
 	size_t	i;
 
-	src2 = (char *) src;
-	dest2 = (char *) dest;
+	str = (char *) s;
 	i = 0;
-	if (dest > src)
+	while (i < n)
 	{
-		while (n > 0)
+		if (str[i] == c)
 		{
-			dest2[n] = src2[n];
-			n--;
+			return (str[i]);
 		}
+		i++;
 	}
+	return (NULL);
 }
