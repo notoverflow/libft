@@ -10,23 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *str)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if (*str == '\0')
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122))
 	{
 		return (1);
 	}
-	while (*str != '\0')
-	{
-		if ((*str >= 48 && *str <= 57) || (*str >= 65 && *str <= 90)
-			|| (*str >= 97 && *str <= 122))
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
+	return (0);
 }

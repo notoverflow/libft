@@ -12,22 +12,11 @@
 
 #include "libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	if (*str == '\0')
+	if (c >= 48 && c <= 57)
 	{
 		return (1);
 	}
-	while (*str != '\0')
-	{
-		if (*str >= 48 && *str <= 57)
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
+	return (0);
 }

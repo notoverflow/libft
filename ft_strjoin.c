@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
 int	ft_count_tab_size(int size, char **strs)
@@ -50,12 +49,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		s;
 	int		i;
 
-	s = 0;
 	i = 0;
 	if (size == 0)
 		s = 1;
 	else
-		s = count_tab_size(size, strs) + ((size - 1) * ft_strlen(sep)) + 1;
+		s = ft_count_tab_size(size, strs) + ((size - 1) * ft_strlen(sep)) + 1;
 	str = malloc(s * sizeof(char));
 	if (!str)
 		return (NULL);

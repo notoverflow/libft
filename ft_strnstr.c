@@ -16,10 +16,8 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
 	char	*ptr;
 	char	*tf;
-	size_t	i;
 
-	i = len;
-	while (i > 0)
+	if (len > 0)
 	{
 		tf = to_find;
 		if (!*to_find)
@@ -39,6 +37,6 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 				return (str);
 			str++;
 		}
-		i--;
 	}
+	return (NULL);
 }

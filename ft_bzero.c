@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:36:54 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 16:39:04 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/05 12:55:27 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/05 12:55:27 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
-	size_t	i;
+	unsigned char	*ptr;
 
-	str = (char *) s;
-	i = 0;
-	while (i < n)
-	{
-		if (str[i] == c)
-		{
-			s = &str[i];
-			return ((void *)s);
-		}
-		i++;
-	}
-	return (NULL);
+	ptr = s;
+	while (n--)
+		*ptr++ = 0;
 }

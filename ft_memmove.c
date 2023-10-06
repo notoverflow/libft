@@ -37,6 +37,5 @@ void	*ft_memmove(void *src, void *dest, size_t n)
 			i++;
 		}
 	}
-
 	return (dest);
 }

@@ -23,12 +23,14 @@ int	ft_atoi(char *str)
 	{
 		str++;
 	}
-	while (*str == 45 || *str == 43)
+	if (*str == 45 || *str == 43)
 	{
 		if (*str == 45)
 			sign *= -1;
 		str++;
 	}
+	if (*str == 45 || *str == 43)
+		return (0);
 	while (*str >= 48 && *str <= 57)
 	{
 		res = 10 * res + *str - 48;

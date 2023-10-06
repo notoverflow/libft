@@ -1,8 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I. -c
-SRC = ft_atoi.c ft_isalnum.c ft_isalpha ft_isascii.c ft_isdigit.c \
-				ft_isprint.c ft_memset.c ft_strchr.c ft_strdup.c ft_strlen.c \
-				ft_strncmp.c ft_tolower ft_toupper.c ft_strrchr.c
+CFLAGS = -Wall -Wextra -Werror
+SRC =  $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 TARGET = libft.a
 
