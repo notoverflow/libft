@@ -6,7 +6,7 @@
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:05:30 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 17:05:30 by oliradet         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:36:46 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		tf = to_find;
 		if (!*to_find)
 			return (str);
-		while (1 == 1)
+		while (1 && len-- != 0 && *str)
 		{
-			if (*str == '\0')
-				return ((void *) 0);
 			ptr = str;
 			to_find = tf;
-			while (*ptr == *to_find && *to_find != 0)
+			while (*ptr == *to_find && *to_find != 0 && len != 0)
 			{
 				ptr++;
 				to_find++;
+				len--;
 			}
 			if (*to_find == '\0')
 				return (str);
