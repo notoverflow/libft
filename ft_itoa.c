@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:05:30 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/12 12:36:46 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/19 13:13:15 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/19 13:13:15 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*ft_itoa(int n)
 {
-	char	*h;
-	size_t	needle_len;
-	size_t	j;
-	size_t	i;
+	char	*str;
 
-	h = (char *)str;
-	needle_len = ft_strlen(to_find);
-	if (!(needle_len))
-		return (h);
-	if ((size_t)ft_strlen(str) < needle_len || len < needle_len)
+	str = (char *)malloc(sizeof(char) * 2);
+	if (!str)
 		return (NULL);
-	i = 0;
-	while (h[i] && i <= len - needle_len)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
 	{
-		j = 0;
-		while (to_find[j] && to_find[j] == h[i + j])
-			j++;
-		if (j == needle_len)
-			return (&h[i]);
-		i++;
+		str[0] = '-';
+		str[1] = '\0';
+		str = ft_strjoin(str, ft_itoa(-n));
 	}
-	return (NULL);
+	else if (n >= 10)
+		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
+	{
+		str[0] = n + '0';
+		str[1] = '\0';
+	}
+	return (str);
 }

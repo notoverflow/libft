@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:05:30 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/12 12:36:46 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/18 20:20:30 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/18 20:20:30 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*h;
-	size_t	needle_len;
-	size_t	j;
-	size_t	i;
+	unsigned int	i;
 
-	h = (char *)str;
-	needle_len = ft_strlen(to_find);
-	if (!(needle_len))
-		return (h);
-	if ((size_t)ft_strlen(str) < needle_len || len < needle_len)
-		return (NULL);
+	if (!s)
+		return ;
 	i = 0;
-	while (h[i] && i <= len - needle_len)
+	while (s[i])
 	{
-		j = 0;
-		while (to_find[j] && to_find[j] == h[i + j])
-			j++;
-		if (j == needle_len)
-			return (&h[i]);
+		f(i, s + i);
 		i++;
 	}
-	return (NULL);
 }

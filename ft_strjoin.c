@@ -12,60 +12,16 @@
 
 #include "libft.h"
 
-int	ft_count_tab_size(int size, char **strs)
-{
-	int	i;
-	int	r;
-
-	i = 0;
-	r = 0;
-	while (i < size)
-	{
-		r += ft_strlen(strs[i]);
-		i++;
-	}
-	return (r);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	destlen;
-
-	i = 0;
-	destlen = ft_strlen(dest);
-	while (src[i])
-	{
-		dest[destlen + i] = src[i];
-		i++;
-	}
-	dest[destlen + i] = '\0';
-	return (dest);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		s;
-	int		i;
+	int		size;
 
-	i = 0;
-	if (size == 0)
-		s = 1;
-	else
-		s = ft_count_tab_size(size, strs) + ((size - 1) * ft_strlen(sep)) + 1;
-	str = malloc(s * sizeof(char));
+	size = ft_strlen((char *) s1) + ft_strlen((char *) s2);
+	str = malloc(size + 1);
 	if (!str)
 		return (NULL);
-	*str = '\0';
-	if (size == 0)
-		return (str);
-	while (i < size)
-	{
-		ft_strcat(str, strs[i]);
-		if (i != size - 1)
-			ft_strcat(str, sep);
-		i++;
-	}
+	ft_strlcpy(str, s1, ft_strlen((char *)s1) + 1);
+	ft_strlcat(str, s2, size + 1);
 	return (str);
 }
