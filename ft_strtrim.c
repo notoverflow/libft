@@ -6,11 +6,12 @@
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:35:14 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/17 17:35:14 by oliradet         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:56:46 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	is_present(char c, char const *set)
 {
@@ -41,14 +42,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (is_present(s1[i], set) == 1 && s1[i])
 		i++;
 	if (!s1[i])
-		return ("");
+	{
+		str = ft_calloc(1, 1);
+		return (str);
+	}
 	while (is_present(s1[j], set) == 1)
 		j--;
-	str = malloc(j - i + 2);
+	str = ft_calloc(1, j - i + 2);
 	if (!str)
 		return (NULL);
 	while (i != j + 1)
 		str[n++] = s1[i++];
-	str[n] = 0;
 	return (str);
 }

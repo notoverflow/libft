@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:36:54 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 16:39:04 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/20 12:42:54 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/20 12:42:54 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	const unsigned char	*str;
+	int	i;
 
-	str = s;
-	while (n-- > 0)
+	i = 0;
+	while (lst != NULL)
 	{
-		if (*str == (unsigned char)c)
-			return ((void *)str);
-		str++;
+		i++;
+		lst = lst->next;
 	}
-	return (NULL);
+	return (i);
 }

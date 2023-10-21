@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 16:36:54 by oliradet          #+#    #+#             */
-/*   Updated: 2023/10/03 16:39:04 by oliradet         ###   ########.fr       */
+/*   Created: 2023/10/21 09:37:30 by oliradet          #+#    #+#             */
+/*   Updated: 2023/10/21 09:37:30 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	const unsigned char	*str;
-
-	str = s;
-	while (n-- > 0)
+	if (!f)
+		return ;
+	while (lst)
 	{
-		if (*str == (unsigned char)c)
-			return ((void *)str);
-		str++;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (NULL);
 }
