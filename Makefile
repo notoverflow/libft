@@ -36,8 +36,7 @@ SRC = ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-
-SRC_BONUS = ft_lstnew.c \
+	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -46,6 +45,12 @@ SRC_BONUS = ft_lstnew.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
+	get_next_line.c \
+	get_next_line_utils.c \
+	ft_more_printer.c \
+	ft_printer.c \
+   	ft_printf.c \
+	
 
 OBJ = ${SRC:.c=.o}
 OBJ_BONUS = ${SRC_BONUS:.c=.o}
