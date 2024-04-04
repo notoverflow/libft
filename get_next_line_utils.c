@@ -6,18 +6,18 @@
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:04:29 by oliradet          #+#    #+#             */
-/*   Updated: 2024/04/05 00:15:50 by oliradet         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:55:49 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /**
- * a strlen lol
+ * a strlenn lol
  * @param str
  * @return
  */
-int	ft_strlen(char *str)
+int	ft_strlenn(char *str)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ char	*ft_strdup(char *str)
 	char	*d;
 	int		i;
 
-	d = malloc(ft_strlen(str) * sizeof(char) + 1);
+	d = malloc(ft_strlenn(str) * sizeof(char) + 1);
 	if (d == NULL)
 		return (NULL);
 	i = 0;
@@ -63,8 +63,8 @@ char	*ft_strjoinGNL(char *s1, char *s2)
 	size_t	len_two;
 	size_t	i;
 
-	len_one = ft_strlen(s1);
-	len_two = ft_strlen(s2);
+	len_one = ft_strlenn(s1);
+	len_two = ft_strlenn(s2);
 	res = (char *)malloc(sizeof(char) * (len_one + len_two + 1));
 	if (!res)
 	{

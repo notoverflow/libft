@@ -51,7 +51,7 @@ char	*clean_buff(char *buff)
 		free(buff);
 		return (NULL);
 	}
-	res = (char *)malloc(sizeof(char) * (ft_strlen(buff) - i + 1));
+	res = (char *)malloc(sizeof(char) * (ft_strlenn(buff) - i + 1));
 	if (!res)
 		return (NULL);
 	j = 0;
