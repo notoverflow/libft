@@ -23,7 +23,7 @@
 
 int		ft_strlen(char *str);
 char	*ft_strdup(char *str);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoinGNL(char *s1, char *s2);
 int		search_newline(char *buf);
 char	*clean_buff(char *buff);
 char	*extract_line(char *buff);

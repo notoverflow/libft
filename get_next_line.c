@@ -6,7 +6,7 @@
 /*   By: oliradet <oliradet@student.42perpignan.f>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 06:01:48 by oliradet          #+#    #+#             */
-/*   Updated: 2024/04/05 00:14:16 by oliradet         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:52:46 by oliradet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char	*read_file(int fd, char *buff)
 			return (NULL);
 		}
 		buf[readed] = '\0';
-		buff = ft_strjoin(buff, buf);
+		buff = ft_strjoinGNL(buff, buf);
 		nl_index = search_newline(buf);
 	}
 	free(buf);
