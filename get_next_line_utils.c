@@ -56,7 +56,7 @@ char	*ft_strdup(char *str)
  * @param s2
  * @return
  */
-char	*ft_strjoinGNL(char *s1, char *s2)
+char	*ft_strjoingnl(char *s1, char *s2)
 {
 	char	*res;
 	size_t	len_one;

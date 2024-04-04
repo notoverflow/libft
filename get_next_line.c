@@ -124,7 +124,7 @@ char	*read_file(int fd, char *buff)
 			return (NULL);
 		}
 		buf[readed] = '\0';
-		buff = ft_strjoinGNL(buff, buf);
+		buff = ft_strjoingnl(buff, buf);
 		nl_index = search_newline(buf);
 	}
 	free(buf);
